@@ -21,20 +21,26 @@ namespace CrmUl
 
         public CustomerForm(Customer customer) : this()
         {
-            Customer = customer ?? new Customer();
+            Customer = customer;
             textBox1.Text = customer.Name;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var p = Customer ?? new Customer();
+            p.Name = textBox1.Text;
+         
+
+            Close();
+        }
+
         private void CustomerForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Customer = Customer ?? new Customer();
-            Customer.Name = textBox1.Text;
-            Close();
-        }
+      
 
+       
     }
 }
